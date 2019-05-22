@@ -60,6 +60,10 @@ for i in $(seq $num3 $num4); do
 		fi
 	done
 
+	if [ "$i" = "1" ]; then
+		continue
+	fi
+
 	if [ "$prime" = "True" ]; then
 		thePrimes="$thePrimes $i"
 #		echo "$i is prime!"
@@ -69,7 +73,7 @@ for i in $(seq $num3 $num4); do
 done
 
 
-if [ "$num1" = "1" ]; then
+if [ $(($num1)) -lt 3 ] && [ $(($num2)) -gt 1 ]; then
 	thePrimes="2$thePrimes"	
 else
 	echo "" >/dev/null
