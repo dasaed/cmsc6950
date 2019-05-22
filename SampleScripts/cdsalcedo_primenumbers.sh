@@ -28,6 +28,8 @@ num4=$(( $num2 % 2))
 if [ $num3 -eq 0 ]; then
 #	echo "$num1 is even"
 	num3=$(($num1+1))
+elif [ "$num1" = "1" ]; then
+	num3=$(($num1+1))
 fi
 
 if [ $num4 -eq 0 ]; then
@@ -65,6 +67,14 @@ for i in $(seq $num3 $num4); do
 		continue
 	fi
 done
+
+
+if [ "$num1" = "1" ]; then
+	thePrimes="2$thePrimes"	
+else
+	echo "" >/dev/null
+fi
+
 if [ "$thePrimes" = "" ]; then
 	echo "There are no primes between $num1 and $num2"
 else
