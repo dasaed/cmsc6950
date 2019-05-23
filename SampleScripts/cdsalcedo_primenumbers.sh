@@ -22,14 +22,14 @@ echo "Date: $(date)"
 
 num1=$1
 num2=$2
-num3=$(( $num1 % 2))
-num4=$(( $num2 % 2))
+num3=$(($num1 % 2))
+num4=$(($num2 % 2))
 
 if [ $num3 -eq 0 ]; then
 #	echo "$num1 is even"
 	num3=$(($num1+1))
-elif [ "$num1" = "1" ]; then
-	num3=$(($num1+1))
+else
+	num3=$(($num1))
 fi
 
 if [ $num4 -eq 0 ]; then
@@ -42,11 +42,10 @@ fi
 thePrimes=""
 
 #for i in {${num1}..${num2}}; do
+#echo $num3 $num4
 for i in $(seq $num3 $num4); do
 	if [ $(($i % 2)) -eq 0 ]; then
 		continue
-	else
-		echo "" >/dev/null
 	fi
 	prime="True"
 	limit=$(echo "sqrt($i)"|bc)
