@@ -3,7 +3,7 @@
 # There are mulitple ways of downloading files with python
 # 
 # In shell scripts
- wget -c --read-timeout=5 --tries=4 "https://www.kaggle.com/lava18/google-play-store-apps/downloads/google-play-store-apps.zip/6"
+wget -c --read-timeout=5 --tries=4 "https://www.kaggle.com/lava18/google-play-store-apps/downloads/googleplaystore.csv/6"
 # 
 # -c - Continue from where you left off if the download is interrupted.
 # 
